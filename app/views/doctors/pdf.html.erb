@@ -1,0 +1,36 @@
+
+
+<div class="contailner">
+	<div class="row">
+		<div class="span12">
+			<center><h3>Doctor</h3></center>
+			<center><h5><%= @doctor.name %></h5></center>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="span12">
+		<h3>Patients</h3>
+		    <table class="table">
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Gender</th>
+				</tr>
+			  			
+				<% @doctor.patients.each do |patient| %>
+					<tr>
+						 <td><%= patient.name %></td>
+						 <td><%= patient.age %></td>
+						 <td><%= patient.gender %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+ 
+ 
+

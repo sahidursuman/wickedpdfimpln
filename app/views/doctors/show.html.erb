@@ -1,0 +1,56 @@
+
+
+<div class="contailner">
+	<div class="row">
+		<div class="span4">
+			<center><h3>Doctor</h3></center>
+			<center><p><%= @doctor.name %></p></center>
+			<center><button class="pdf_hide"><%= link_to 'Generate PDF', @doctor.id.to_s+'/generate_pdf' %></button></center>
+		</div>
+		
+		<div class="span4 pdf_hide">
+		<h3>Add new patient:</h3>
+			<%= form_for([@doctor, @doctor.patients.build]) do |f| %>
+			  <p>
+				<%= f.label :Name %><br />
+				<%= f.text_field :name %>
+			  </p>
+			  <p>
+				<%= f.label :Age %><br />
+				<%= f.text_field :age %>
+			  </p>
+			  <p>
+				<%= f.label :Gender %><br />
+				<%= f.select :gender , options_for_select({"Male"=>"M","Female"=>"F"}) %>
+			  </p>
+			  <p>
+				<%= f.submit %>
+			  </p>
+			<% end %>
+		</div>
+		
+		<div class="span4">
+		<h3>Patients</h3>
+		    <table class="table">
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Gender</th>
+				</tr>
+			  			
+				<% @doctor.patients.each do |patient| %>
+					<tr>
+						 <td><%= patient.name %></td>
+						 <td><%= patient.age %></td>
+						 <td><%= patient.gender %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+ 
+ 
+

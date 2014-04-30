@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  age: 1
+  gender: MyString
+  doctor_id: 
+  delete_flg: false
+
+two:
+  name: MyString
+  age: 1
+  gender: MyString
+  doctor_id: 
+  delete_flg: false

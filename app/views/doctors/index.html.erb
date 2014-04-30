@@ -1,0 +1,64 @@
+
+<div class="container">
+	<div class="row">
+		<div class="span12">
+			<center><h1>Hospital</h1></center>
+		</div>
+	</div><br/>
+	
+	<div class="row">
+		<div class="offset2 span4">
+			<h3>New Doctors</h3>
+			
+			<%= form_for @doctor do |f| %>
+				<p>
+					<%= f.text_field :name, :placeholder => "Name" %>
+				</p>
+				<p>
+					<button type="submit">Submit</button>
+				</p>
+			<%end%>
+		</div>
+	
+		<div class="span4">
+			<h3>Doctors List</h3>
+
+			<table class="table">
+				<tr>
+					<th>Name</th>
+					<th></th>
+				</tr>
+			  
+				<% @doctors.each do |doctor| %>
+					<tr>
+						 <td><%= doctor.name %></td>
+						 <td><%= link_to 'Details', doctor %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="offset2 span8">
+			<h3>All Patients</h3><button class="pdf_hide"><%= link_to 'Generate PDF', 'generate_pdf' %></button>
+		    <table class="table">
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Gender</th>
+				</tr>
+			  			
+				<% @patients.each do |patient| %>
+					<tr>
+						 <td><%= patient.name %></td>
+						 <td><%= patient.age %></td>
+						 <td><%= patient.gender %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+	
+	
+</div>
